@@ -12,4 +12,9 @@ public class Homepage {
         driver.findElement(formAuthentication).click();
         return new LoginPage(driver);
     }
+    public void clickLink(String linkText){
+        driver.findElement(By.linkText(linkText)).click();
+    }
+
 }
+
