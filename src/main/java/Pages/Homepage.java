@@ -15,6 +15,10 @@ public class Homepage {
         clickLink("Dropdown");
         return new DropdownPage(driver);
     }
+    public HoversPage clickHovers(){
+        clickLink("Hovers");
+        return new HoversPage(driver);
+    }
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
