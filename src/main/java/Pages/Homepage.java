@@ -19,9 +19,9 @@ public class Homepage {
         clickLink("Hovers");
         return new HoversPage(driver);
     }
-    public KeyPresses clickover(){
+    public KeyPressesPage clickKeyPresses(){
         clickLink("Key Presses");
-        return new KeyPresses(driver);
+        return new KeyPressesPage(driver);
     }
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();

@@ -16,7 +16,4 @@ public class KeyPressesPage {
     public String getResult(){
         return driver.findElement(resultText).getText();
     }
-
-
-
 }
