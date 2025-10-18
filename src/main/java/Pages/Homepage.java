@@ -23,6 +23,11 @@ public class Homepage {
         clickLink("Key Presses");
         return new KeyPressesPage(driver);
     }
+
+    public AlertPage clickJavaScriptAlerts(){
+        clickLink("JavaScript Alerts");
+        return new AlertPage(driver);
+    }
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
