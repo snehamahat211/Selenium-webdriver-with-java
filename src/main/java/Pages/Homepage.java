@@ -24,9 +24,9 @@ public class Homepage {
         return new KeyPressesPage(driver);
     }
 
-    public AlertPage clickJavaScriptAlerts(){
+    public AlertsPage clickJavaScriptAlerts(){
         clickLink("JavaScript Alerts");
-        return new AlertPage(driver);
+        return new AlertsPage(driver);
     }
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
