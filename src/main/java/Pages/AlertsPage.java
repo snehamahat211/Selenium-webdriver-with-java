@@ -12,6 +12,7 @@ public class AlertsPage {
 
     private By triggerAlertButton = By.xpath("//*[@id=\"content\"]/div/ul/li[1]/button");
     private By triggerConfirmButton=By.xpath("/html/body/div[2]/div/div/ul/li[2]/button");
+    private By triggertextButton=By.xpath("//*[@id=\"content\"]/div/ul/li[3]/button");
     private By results = By.id("result");
 
     public AlertsPage(WebDriver driver) {
@@ -27,10 +28,13 @@ public class AlertsPage {
         wait.until(ExpectedConditions.elementToBeClickable(triggerConfirmButton)).click();
     }
 
+    public void triggertext() {
+        wait.until(ExpectedConditions.elementToBeClickable(triggertextButton)).click();
+    }
+
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
-
     public void dismissAlert() {
         driver.switchTo().alert().dismiss();
     }
@@ -38,10 +42,12 @@ public class AlertsPage {
     public String getAlertText() {
         return driver.switchTo().alert().getText();
     }
-
-
-
+    public String setInput(String text) {
+        driver.switchTo().alert().sendKeys(text);
+        return text;
+    }
     public String getResult() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(results)).getText();
     }
+
 }
