@@ -33,6 +33,10 @@ public class Homepage {
         clickLink("File Upload");
         return new FileUploadPage(driver);
     }
+    public WysiwygEditorPage clickWysiwygEditor(){
+        clickLink("Wysiwyg Editor");
+        return new WysiwygEditorPage(driver);
+    }
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
     }
