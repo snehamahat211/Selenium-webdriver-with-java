@@ -2,7 +2,6 @@ package alerts;
 
 import Base.BaseTests;
 import org.testng.annotations.Test;
-
 import static org.testng.Assert.assertEquals;
 
 public class AlertTests extends BaseTests {
@@ -12,6 +11,15 @@ public class AlertTests extends BaseTests {
         alertsPage.triggerAlert();
         alertsPage.acceptAlert();
         assertEquals(alertsPage.getResult(),"You successfully clicked an alert","Result Text incorrect ");
+
+    }
+    @Test
+    public void testRejectAlert() {
+        var alertsPage=homePage.clickJavaScriptAlerts();
+        alertsPage.triggerConfirm();
+        alertsPage.dismissAlert();
+        String text= alertsPage.getAlertText();
+        assertEquals(text,"I am a JS Confirm","Alert Text incorrect ");
 
     }
 

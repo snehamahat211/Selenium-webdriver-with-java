@@ -11,20 +11,35 @@ public class AlertsPage {
     private WebDriverWait wait;
 
     private By triggerAlertButton = By.xpath("//*[@id=\"content\"]/div/ul/li[1]/button");
+    private By triggerConfirmButton=By.xpath("/html/body/div[2]/div/div/ul/li[2]/button");
     private By results = By.id("result");
 
     public AlertsPage(WebDriver driver) {
         this.driver = driver;
-        this.wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+        this.wait = new WebDriverWait(driver, Duration.ofSeconds(5));
     }
 
     public void triggerAlert() {
         wait.until(ExpectedConditions.elementToBeClickable(triggerAlertButton)).click();
     }
 
+    public void triggerConfirm() {
+        wait.until(ExpectedConditions.elementToBeClickable(triggerConfirmButton)).click();
+    }
+
     public void acceptAlert() {
         driver.switchTo().alert().accept();
     }
+
+    public void dismissAlert() {
+        driver.switchTo().alert().dismiss();
+    }
+
+    public String getAlertText() {
+        return driver.switchTo().alert().getText();
+    }
+
+
 
     public String getResult() {
         return wait.until(ExpectedConditions.visibilityOfElementLocated(results)).getText();
