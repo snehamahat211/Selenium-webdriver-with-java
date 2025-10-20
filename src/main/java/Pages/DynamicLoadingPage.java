@@ -11,8 +11,8 @@ public class DynamicLoadingPage{
         this .driver = driver;
 
     }
-    public DynamicLoadingExamplePage clickExample1(){
-    driver.findElemennt(link_Example1).click();
-    return new DynamicLoadingExamplePage(driver);
+    public DynamicLoadingExample1Page clickExample1(){
+    driver.findElement(link_Example1).click();
+    return new DynamicLoadingExample1Page(driver);
     }
 }
