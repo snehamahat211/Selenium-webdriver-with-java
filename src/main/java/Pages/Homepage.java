@@ -23,8 +23,6 @@ public class Homepage {
         clickLink("Key Presses");
         return new KeyPressesPage(driver);
     }
-
-
     public AlertsPage clickJavaScriptAlerts(){
         clickLink("JavaScript Alerts");
         return new AlertsPage(driver);
@@ -36,6 +34,10 @@ public class Homepage {
     public Wysiwyg clickWysiwygEditor(){
         clickLink("WYSIWYG Editor");
         return new Wysiwyg(driver);
+    }
+    public DynamicLoadingPage clickDynamicLoading(){
+        clickLink("Dynamic Loading");
+        return new DynamicLoadingPage(driver);
     }
 
     public void clickLink(String linkText){

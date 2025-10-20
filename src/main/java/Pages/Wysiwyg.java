@@ -7,7 +7,7 @@ public class Wysiwyg {
     private WebDriver driver;
     private String editorframeId="mce_0_ifr";
     private By textArea= By.id("tinymce");
-    private By decreaseIndentButton=By.cssSelector("#content > div > div > div.tox-editor-container > div.tox-editor-header > div.tox-toolbar-overlord.tox-tbtn--disabled > div > div:nth-child(5) > button:nth-child(2) > span > svg");
+    private By decreaseIndentButton=By.cssSelector("#mceu_12 button");
 
     public Wysiwyg(WebDriver driver){
         this.driver = driver;
