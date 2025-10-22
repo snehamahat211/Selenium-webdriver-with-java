@@ -11,6 +11,10 @@ public class JavaScriptTests extends BaseTests {
 
 
     }
+    public void testScrollToFifthParagraph(){
+        homePage.clickInfiniteScroll().scrollToParagraph(5);
+
+    }
 
 
 

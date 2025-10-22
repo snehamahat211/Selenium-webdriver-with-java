@@ -20,6 +20,10 @@ public class Homepage {
         return new LargeAndDeepDom(driver);
 
     }
+    public InfiniteScrollPage clickInfiniteScroll(){
+        clickLink ("Large & Deep DOM");
+        return new InfiniteScrollPage (driver);}
+
     public HoversPage clickHovers(){
         clickLink("Hovers");
         return new HoversPage(driver);
