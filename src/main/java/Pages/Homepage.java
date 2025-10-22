@@ -15,9 +15,9 @@ public class Homepage {
         clickLink("Dropdown");
         return new DropdownPage(driver);
     }
-    public LargeAndDeepDomPage clickLargeAndDeepDom(){
+    public LargeAndDeepDom clickLargeAndDeepDom(){
         clickLink ("Large & Deep DOM");
-        return new LargeAndDeepDomPage(driver);
+        return new LargeAndDeepDom(driver);
 
     }
     public HoversPage clickHovers(){
