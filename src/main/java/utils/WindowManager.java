@@ -9,29 +9,23 @@ public class WindowManager {
 
     public WindowManager(WebDriver driver) {
         this.driver = driver;
-        navigate=driver.navigate();
+        navigate = driver.navigate();
     }
 
-    public void goBack()
-    {
+    public void goBack() {
         navigate.back();
     }
-    public void goForward()
-    {
+
+    public void goForward() {
         navigate.forward();
     }
-    public void refreshPage()
-    {
+
+    public void refreshPage() {
         navigate.refresh();
     }
-    public void goToUrl(String url)
-    {
+
+    public void goTo(String url) {
         navigate.to(url);
     }
-
-
-
-
-
-
 }
+

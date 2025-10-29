@@ -6,6 +6,7 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.BeforeClass;
+import utils.WindowManager;
 
 import java.util.List;
 
@@ -25,5 +26,9 @@ public class BaseTests {
     @AfterClass
     public void teardown(){
         driver.quit();
+    }
+
+    public WindowManager getWindowManager(){
+        return new WindowManager(driver);
     }
 }
