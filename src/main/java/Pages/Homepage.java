@@ -24,6 +24,11 @@ public class Homepage {
         clickLink ("Large & Deep DOM");
         return new InfiniteScrollPage (driver);}
 
+    public MultipleWindowsPage clickMultipleWindows(){
+        clickLink("Multiple Windows");
+        return new MultipleWindowsPage(driver);
+    }
+
     public HoversPage clickHovers(){
         clickLink("Hovers");
         return new HoversPage(driver);
@@ -49,10 +54,7 @@ public class Homepage {
         return new DynamicLoadingPage(driver);
     }
 
-    public MultipleWindowsPage clickMultipleWindows(){
-        clickLink("Multiple Windows");
-        return new MultipleWindowsPage(driver);
-    }
+
 
     public void clickLink(String linkText){
         driver.findElement(By.linkText(linkText)).click();
