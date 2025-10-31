@@ -6,6 +6,7 @@ import org.openqa.selenium.OutputType;
 import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.ITestResult;
 import org.testng.annotations.AfterClass;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
@@ -34,24 +35,25 @@ public class BaseTests {
     }
 
     @AfterMethod
-    public void takeScreenshot() {
-        var camera = (TakesScreenshot) driver;
-        File screenshot = camera.getScreenshotAs(OutputType.FILE);
+    public void takeFailedScreenshot(ITestResult result) {
+        if(ITestResult.FAILURE==result.getStatus()) {
+            var camera = (TakesScreenshot) driver;
+            File screenshot = camera.getScreenshotAs(OutputType.FILE);
 
-        try {
-            // Create the directory if it doesn't exist
-            File screenshotDir = new File("resources/screenshots");
-            if (!screenshotDir.exists()) {
-                screenshotDir.mkdirs();
+            try {
+                File screenshotDir = new File("resources/screenshots");
+                if (!screenshotDir.exists()) {
+                    screenshotDir.mkdirs();
+                }
+
+
+                String filePath = "resources/screenshots/test_" + System.currentTimeMillis() + ".png";
+                Files.copy(screenshot, new File(filePath));
+                System.out.println("Screenshot saved: " + filePath);
+
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-
-            // Save screenshot with a timestamp
-            String filePath = "resources/screenshots/test_" + System.currentTimeMillis() + ".png";
-            Files.copy(screenshot, new File(filePath));
-            System.out.println("Screenshot saved: " + filePath);
-
-        } catch (IOException e) {
-            e.printStackTrace();
         }
     }
 
